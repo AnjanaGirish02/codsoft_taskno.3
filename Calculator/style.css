@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to bottom right, #1e88e5, #673ab7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.calculator {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #ec407a, #ab47bc);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    animation: scaleIn 0.5s ease forwards;
+}
+
+.calculator-heading {
+    text-align: center;
+    font-size: 24px;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.theme-toggler {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active::before {
+    background-color: #fff;
+}
+
+.theme-toggler::before {
+    content: '';
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+#display {
+    padding: 0 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 36px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 50%;
+    margin: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #f48fb1;
+    color: #fff;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button#equal {
+    height: 130px;
+    font-size: 28px;
+}
+
+
+.calculator.dark {
+    background: linear-gradient(to bottom right, #616161, #212121);
+    color: #fff;
+}
+
+.calculator.dark button {
+    background-color: #9575cd;
+}
+
+.calculator.dark button#clear {
+    background-color: #ef5350;
+}
+
+.calculator.dark button.btn-operator {
+    background-color: #ba68c8;
+}
+
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
